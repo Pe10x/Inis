@@ -957,3 +957,45 @@ Processing by MotivosController#index as HTML
   [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
   Rendered motivos/index.html.erb within layouts/application (5.2ms)
 Completed 200 OK in 69ms (Views: 68.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 18:00:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.6ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (128.6ms)
+Completed 200 OK in 3404ms (Views: 3346.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/scaffolds.self-321f43c2714c4801b5f68e5bc1cbb9d1e3df3dcdfd139b968875dcb05022153d.css?body=1" for 127.0.0.1 at 2016-04-07 18:00:26 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-07 18:00:26 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-07 18:00:26 -0300
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 18:00:47 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (200.5ms)
+  Rendered motivos/new.html.erb within layouts/application (289.9ms)
+Completed 200 OK in 593ms (Views: 590.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 18:01:01 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8tgaIW+WKnUH3V3O48pCcSJpVGtlYD2q5Y+qdHnqAraYPQXohUVpqTv3gyHoFApeV1aFJo9ImdZZIMN0aTMFRw==", "motivo"=>{"tipo"=>"gordito fazan"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "gordito fazan"], ["created_at", "2016-04-07 21:01:01.373206"], ["updated_at", "2016-04-07 21:01:01.373206"]]
+  [1m[36m (57.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/21
+Completed 302 Found in 136ms (ActiveRecord: 65.2ms)
+
+
+Started GET "/motivos/21" for 127.0.0.1 at 2016-04-07 18:01:01 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mMotivo Load (0.5ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered motivos/show.html.erb within layouts/application (114.9ms)
+Completed 200 OK in 558ms (Views: 487.8ms | ActiveRecord: 0.5ms)
