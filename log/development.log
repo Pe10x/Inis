@@ -1,0 +1,959 @@
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (10.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMotivos (20160407144329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "motivos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144329"]]
+  [1m[35m (16.2ms)[0m  commit transaction
+Migrating to CreateAulas (20160407144409)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "aulas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144409"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Migrating to CreateDepartamentos (20160407144421)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "departamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144421"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Migrating to CreateHorarios (20160407144615)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "horarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fecha" date, "horario" time, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144615"]]
+  [1m[35m (19.9ms)[0m  commit transaction
+Migrating to CreateDerivacions (20160407144700)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "derivacions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "observacion" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144700"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+Migrating to CreateUsuarios (20160407144745)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144745"]]
+  [1m[35m (13.3ms)[0m  commit transaction
+Migrating to CreateEntrevista (20160407144901)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "entrevista" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "asistencia" boolean, "tipo" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407144901"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDepartamentoToDerivacion (20160407145439)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "derivacions" ADD "departamento_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_derivacions_on_departamento_id" ON "derivacions" ("departamento_id")[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160407145439"]]
+  [1m[36m (16.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddEntrevistaToDerivacion (20160407145735)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "derivacions" ADD "entrevista_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_derivacions_on_departamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_derivacions_on_departamento_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_derivacions_on_entrevista_id" ON "derivacions" ("entrevista_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160407145735"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddUsuarioToHorario (20160407145859)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "horarios" ADD "usuario_id" integer[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_horarios_on_usuario_id" ON "horarios" ("usuario_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407145859"]]
+  [1m[35m (16.1ms)[0m  commit transaction
+Migrating to AddHorarioToEntrevista (20160407145928)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "entrevista" ADD "horario_id" integer
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_entrevista_on_horario_id" ON "entrevista" ("horario_id")[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160407145928"]]
+  [1m[36m (11.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddUsuarioToEntrevista (20160407150012)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "entrevista" ADD "usuario_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_entrevista_on_usuario_id" ON "entrevista" ("usuario_id")[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160407150012"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddMotivoToEntrevista (20160407150031)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entrevista" ADD "motivo_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_entrevista_on_motivo_id" ON "entrevista" ("motivo_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407150031"]]
+  [1m[35m (14.2ms)[0m  commit transaction
+Migrating to AddAulaToEntrevista (20160407150047)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "entrevista" ADD "aula_id" integer
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_entrevista_on_aula_id" ON "entrevista" ("aula_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160407150047"]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Migrating to AddDerivacionToEntrevista (20160407150141)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "entrevista" ADD "derivacion_id" integer
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_aula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_aula_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_entrevista_on_derivacion_id" ON "entrevista" ("derivacion_id")[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160407150141"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_derivacions_on_entrevista_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_derivacions_on_entrevista_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_derivacions_on_departamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_derivacions_on_departamento_id' AND type='index'
+
+  [1m[36m (1.7ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_derivacion_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_derivacion_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_aula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_aula_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_motivo_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_usuario_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entrevista_on_horario_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_horarios_on_usuario_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_horarios_on_usuario_id' AND type='index'
+
+
+
+Started GET "/alumnos" for 127.0.0.1 at 2016-04-07 15:37:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/alumnos"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/leandro/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/leandro/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/leandro/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.0ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.8ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.0ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.1ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-07 15:37:16 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/leandro/.rvm/gems/ruby-2.3.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.6ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2016-04-07 15:38:10 -0300
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (1.4ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 1659ms (Views: 1656.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/scaffolds.self-321f43c2714c4801b5f68e5bc1cbb9d1e3df3dcdfd139b968875dcb05022153d.css?body=1" for 127.0.0.1 at 2016-04-07 15:38:11 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-07 15:38:11 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-07 15:38:11 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:38:36 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 221ms (Views: 212.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:38:39 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (20.6ms)
+  Rendered motivos/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 115ms (Views: 107.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:38:50 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hWQ9Yhlfi2IqAt1qfecLFyujk5oO5Ej5jr6DoP6Y/w4uiEtgAs68brntjcn6VenFSJykwLtEOf7GIz2+Zut5UA==", "motivo"=>{"tipo"=>"Respecto al contenido de las asignaturas"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Respecto al contenido de las asignaturas"], ["created_at", "2016-04-07 18:38:50.783556"], ["updated_at", "2016-04-07 18:38:50.783556"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/1
+Completed 302 Found in 27ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/motivos/1" for 127.0.0.1 at 2016-04-07 15:38:50 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMotivo Load (0.5ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered motivos/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 98ms (Views: 75.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:38:58 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 83ms (Views: 82.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:39:00 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.8ms)
+  Rendered motivos/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:39:02 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z4OqBJlcxtfBUToReeZIpCv2jKugK53FKSoz8MwwqMRkb9wGgs3x21K+arL+VKp2SMm78RWL7MJht43uVEMumg==", "motivo"=>{"tipo"=>"Rendimiento académico en determinadas asignaturas"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Rendimiento académico en determinadas asignaturas"], ["created_at", "2016-04-07 18:39:02.998737"], ["updated_at", "2016-04-07 18:39:02.998737"]]
+  [1m[36m (24.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/2
+Completed 302 Found in 30ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/motivos/2" for 127.0.0.1 at 2016-04-07 15:39:03 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMotivo Load (0.5ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 66ms (Views: 63.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:39:10 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:39:11 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (1.3ms)
+  Rendered motivos/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:39:14 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o04O1Gjz2V2yg7KdK2JfBtPZuii4Wo/nM966mXJIQP4IonjWc2LuUSFs4j6s0L3UsOaNcg36/uB7QwSH6jvGoA==", "motivo"=>{"tipo"=>"Retraso en su progreso académico"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Retraso en su progreso académico"], ["created_at", "2016-04-07 18:39:14.660021"], ["updated_at", "2016-04-07 18:39:14.660021"]]
+  [1m[35m (24.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/3
+Completed 302 Found in 27ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/motivos/3" for 127.0.0.1 at 2016-04-07 15:39:14 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered motivos/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:39:17 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 68ms (Views: 67.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:39:23 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.8ms)
+  Rendered motivos/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:39:27 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0JY7QeR/S0wKIfvi5GcOtNc+t1EwGXn/CONS/4QhOpx7ek1D/+58QJnOq0Fj1exmtAGAC4W5CPhAfuzhHFK8wg==", "motivo"=>{"tipo"=>"Ausentismo"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Ausentismo"], ["created_at", "2016-04-07 18:39:27.023257"], ["updated_at", "2016-04-07 18:39:27.023257"]]
+  [1m[36m (24.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/4
+Completed 302 Found in 28ms (ActiveRecord: 24.6ms)
+
+
+Started GET "/motivos/4" for 127.0.0.1 at 2016-04-07 15:39:27 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:39:28 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:39:37 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (5.2ms)
+  Rendered motivos/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:39:41 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+PoVenR8y/c6cwFWdz1irFAcvPoFAMdJDhWz25NOJ6AD55X8kDEI08GnKbebhdY0n9FqV20chpspejR9j6+wA==", "motivo"=>{"tipo"=>"Asuntos relacionados con la inserción profesional como futuro egresado"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Asuntos relacionados con la inserción profesional como futuro egresado"], ["created_at", "2016-04-07 18:39:41.452846"], ["updated_at", "2016-04-07 18:39:41.452846"]]
+  [1m[35m (17.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/5
+Completed 302 Found in 23ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/motivos/5" for 127.0.0.1 at 2016-04-07 15:39:41 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered motivos/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:39:43 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 78.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:39:52 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:39:54 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y+r7pr26w1R0JdkNuQQWl6YGbCndm/dSRDi61RZ+QhxgBo2kpiv0WOfKia4+tvRFxTlbc2g7hlUMpQTLjg3EQg==", "motivo"=>{"tipo"=>"Información sobre posgrados"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Información sobre posgrados"], ["created_at", "2016-04-07 18:39:54.841606"], ["updated_at", "2016-04-07 18:39:54.841606"]]
+  [1m[36m (22.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/6
+Completed 302 Found in 32ms (ActiveRecord: 24.9ms)
+
+
+Started GET "/motivos/6" for 127.0.0.1 at 2016-04-07 15:39:54 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered motivos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:40:02 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (1.6ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:40:04 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:40:07 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KfnCv4pKao3Aj8W5fNNU0A9hUci9GQ14Mq3Y9kg99pmCFbS9kdtdgVNglRr7YbYCbF5mkgi5fH96MGbo0E5wxw==", "motivo"=>{"tipo"=>"Seguimiento del tesista"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Seguimiento del tesista"], ["created_at", "2016-04-07 18:40:07.109704"], ["updated_at", "2016-04-07 18:40:07.109704"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/7
+Completed 302 Found in 19ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/motivos/7" for 127.0.0.1 at 2016-04-07 15:40:07 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMotivo Load (0.9ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:40:15 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 94ms (Views: 89.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:40:18 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 65ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:40:21 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckGXXgElBdGmlB8NxVB5Fwuei+PbJpwpsxB90XWXwqPZreFcGrQy3TV7T65C4pvFaKG8uW6G7S77jcPP7eRE/Q==", "motivo"=>{"tipo"=>"Preparación para los exámenes"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Preparación para los exámenes"], ["created_at", "2016-04-07 18:40:21.128304"], ["updated_at", "2016-04-07 18:40:21.128304"]]
+  [1m[36m (23.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/8
+Completed 302 Found in 28ms (ActiveRecord: 24.2ms)
+
+
+Started GET "/motivos/8" for 127.0.0.1 at 2016-04-07 15:40:21 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered motivos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:40:28 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:40:29 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (1.1ms)
+  Rendered motivos/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:40:32 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nbrqlWZ9zDyAQMEFgNn9n2bhpwdCcP0k+ufhP5hP2u02VpyXfez7MBOvkaYHax9NBd6QXffQjCOyel8hADxcsw==", "motivo"=>{"tipo"=>"Manejo del tiempo dedicado al estudio"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Manejo del tiempo dedicado al estudio"], ["created_at", "2016-04-07 18:40:32.869171"], ["updated_at", "2016-04-07 18:40:32.869171"]]
+  [1m[35m (15.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/9
+Completed 302 Found in 26ms (ActiveRecord: 21.3ms)
+
+
+Started GET "/motivos/9" for 127.0.0.1 at 2016-04-07 15:40:32 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered motivos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:40:35 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:40:42 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (4.0ms)
+  Rendered motivos/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 60ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:40:44 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U7OCD25AhKM16bm7FRULlvJFOy8Sh2X/sUV5Lnp4Bez4X/QNddGzr6YG6RiSp+lEkXoMdacnFPj52Mcw4guDsg==", "motivo"=>{"tipo"=>"Hábitos y métodos de estudio"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Hábitos y métodos de estudio"], ["created_at", "2016-04-07 18:40:44.595903"], ["updated_at", "2016-04-07 18:40:44.595903"]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/10
+Completed 302 Found in 18ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/motivos/10" for 127.0.0.1 at 2016-04-07 15:40:44 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mMotivo Load (0.8ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered motivos/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:40:46 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:40:51 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (1.1ms)
+  Rendered motivos/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 56ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:40:54 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yjo3GMqyWRBFwyS/1Fj1NaSN5AmdnDjrdRI1CBJk5j9h1kEa0SNuHNYsdBxT6hfnx7LTUyg8Sew9j4sWihdgYQ==", "motivo"=>{"tipo"=>"Problemas de atención en clase"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Problemas de atención en clase"], ["created_at", "2016-04-07 18:40:54.660561"], ["updated_at", "2016-04-07 18:40:54.660561"]]
+  [1m[35m (15.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/11
+Completed 302 Found in 26ms (ActiveRecord: 15.9ms)
+
+
+Started GET "/motivos/11" for 127.0.0.1 at 2016-04-07 15:40:54 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 98ms (Views: 94.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:41:02 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 75ms (Views: 69.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:41:05 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (6.2ms)
+  Rendered motivos/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:41:07 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZKLK3/6nzO31A6Hok0sm3Bg84gO20LZEvjEr5icXIlvPTrzd5Tb74Wbs8UsU+cQOewPVWQNwx0P2rJX4v2SkBQ==", "motivo"=>{"tipo"=>"Adaptación a la vida universitaria"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Adaptación a la vida universitaria"], ["created_at", "2016-04-07 18:41:07.029420"], ["updated_at", "2016-04-07 18:41:07.029420"]]
+  [1m[36m (12.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/12
+Completed 302 Found in 23ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/motivos/12" for 127.0.0.1 at 2016-04-07 15:41:07 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered motivos/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 71ms (Views: 61.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:41:15 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:41:18 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:41:22 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X96gZlU5VY0RbFFL8NvO7KwzbWFBC12ScupxsMxhpS/0MtZkTqhigYKDAeh3aSw+zwxaO/SrLJU6d8+uVBIjcQ==", "motivo"=>{"tipo"=>"Inquietudes en cuanto a su vocación/ o futura profesión"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Inquietudes en cuanto a su vocación/ o futura profesión"], ["created_at", "2016-04-07 18:41:22.553538"], ["updated_at", "2016-04-07 18:41:22.553538"]]
+  [1m[35m (19.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/13
+Completed 302 Found in 24ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/motivos/13" for 127.0.0.1 at 2016-04-07 15:41:22 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered motivos/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 89ms (Views: 85.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:41:24 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 58.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:41:32 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 60ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:41:35 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PVXd8ZmNCa6M76DxcKoRKV9VYCzxHWq6yHmqC2jBLneWuavzghw+oh8A8FL3GPP7PGpXdkS9G72A5BQV8LKoKQ==", "motivo"=>{"tipo"=>"Problemas económicos que afectan su desempeño académico"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Problemas económicos que afectan su desempeño académico"], ["created_at", "2016-04-07 18:41:36.012752"], ["updated_at", "2016-04-07 18:41:36.012752"]]
+  [1m[36m (20.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/14
+Completed 302 Found in 38ms (ActiveRecord: 20.9ms)
+
+
+Started GET "/motivos/14" for 127.0.0.1 at 2016-04-07 15:41:36 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMotivo Load (0.8ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 14]]
+  Rendered motivos/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:41:42 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (2.7ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:41:43 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:41:47 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0eckiR1mafP6ZIPi1LkmxKRTF+DwdMu8Yq+HETzrrmZ6C1KLBvde/2mL00FTC8QWx2wgukXUursqMjkPpJgoOA==", "motivo"=>{"tipo"=>"Problemas personales"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Problemas personales"], ["created_at", "2016-04-07 18:41:47.028811"], ["updated_at", "2016-04-07 18:41:47.028811"]]
+  [1m[35m (23.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/15
+Completed 302 Found in 30ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/motivos/15" for 127.0.0.1 at 2016-04-07 15:41:47 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mMotivo Load (0.1ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 15]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 72.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:41:56 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:41:59 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.8ms)
+  Rendered motivos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:42:02 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gkvVWjuE/QBwPXT4pNZGHnWm+GgGvtmVUtLYyKvfxQkpp6NYIBXKDOPSJFsjZKTMFpnPMrMeqJIaT2bWM6xDVw==", "motivo"=>{"tipo"=>"Tutoría de docentes"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Tutoría de docentes"], ["created_at", "2016-04-07 18:42:02.926180"], ["updated_at", "2016-04-07 18:42:02.926180"]]
+  [1m[36m (18.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/16
+Completed 302 Found in 26ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/motivos/16" for 127.0.0.1 at 2016-04-07 15:42:02 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 16]]
+  Rendered motivos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:42:10 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:42:12 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (3.4ms)
+  Rendered motivos/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 81ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:42:15 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DsdjYv5RN6UYuDZMNP870sXwXBluMVv9xJdzcTbGd9ulKxVg5cAAqYtXZu+zTdkAps9rQ9uRKvqMCs1vrrXxhQ==", "motivo"=>{"tipo"=>"Respecto a su avance académico (orientación sobre asignaturas a tomar, etc.)"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Respecto a su avance académico (orientación sobre asignaturas a tomar, etc.)"], ["created_at", "2016-04-07 18:42:15.114817"], ["updated_at", "2016-04-07 18:42:15.114817"]]
+  [1m[35m (15.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/17
+Completed 302 Found in 21ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/motivos/17" for 127.0.0.1 at 2016-04-07 15:42:15 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMotivo Load (0.0ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered motivos/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:42:22 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 65ms (Views: 64.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:42:24 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.8ms)
+  Rendered motivos/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:42:27 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dqKPBJY7HouvyCOqZk3inOUwy/S5XCU4aJLVl5z7ShfdTvkGjaophzwncwnh/wBOhg/8rgz8VD8gD2uJBIjMSQ==", "motivo"=>{"tipo"=>"Respecto a las prácticas profesionales/residencias"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Respecto a las prácticas profesionales/residencias"], ["created_at", "2016-04-07 18:42:27.510432"], ["updated_at", "2016-04-07 18:42:27.510432"]]
+  [1m[36m (19.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/18
+Completed 302 Found in 25ms (ActiveRecord: 21.7ms)
+
+
+Started GET "/motivos/18" for 127.0.0.1 at 2016-04-07 15:42:27 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 18]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:42:33 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:42:35 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (0.9ms)
+  Rendered motivos/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:42:38 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bIoNmtlOR4iyCkG4r1bvaH4PmzMItrL6aoS1sV0j4wzHZnuYwt9whCHlERso5A26HTCsab0Ww/0iGQuvxVBlUg==", "motivo"=>{"tipo"=>"Orientación para la investigación (no tesis)"}, "commit"=>"Create Motivo"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["tipo", "Orientación para la investigación (no tesis)"], ["created_at", "2016-04-07 18:42:38.084761"], ["updated_at", "2016-04-07 18:42:38.084761"]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/motivos/19
+Completed 302 Found in 18ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/motivos/19" for 127.0.0.1 at 2016-04-07 15:42:38 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mMotivo Load (0.3ms)[0m  [1mSELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1[0m  [["id", 19]]
+  Rendered motivos/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:42:45 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.2ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/motivos/new" for 127.0.0.1 at 2016-04-07 15:42:46 -0300
+Processing by MotivosController#new as HTML
+  Rendered motivos/_form.html.erb (1.5ms)
+  Rendered motivos/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 64ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/motivos" for 127.0.0.1 at 2016-04-07 15:42:50 -0300
+Processing by MotivosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1j2LyXRRnhZ04eZ9KPD2iTXNIwhAlF0iq1qL5Pg/BTx90f3Lb8CpGucOtt6vQhRbVvIUUvU0LCXjxzX6YEyDYg==", "motivo"=>{"tipo"=>"Tutoría de egresados"}, "commit"=>"Create Motivo"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "motivos" ("tipo", "created_at", "updated_at") VALUES (?, ?, ?)  [["tipo", "Tutoría de egresados"], ["created_at", "2016-04-07 18:42:50.144175"], ["updated_at", "2016-04-07 18:42:50.144175"]]
+  [1m[36m (13.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/motivos/20
+Completed 302 Found in 28ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/motivos/20" for 127.0.0.1 at 2016-04-07 15:42:50 -0300
+Processing by MotivosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mMotivo Load (0.1ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 20]]
+  Rendered motivos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 54.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-07 15:42:52 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 69ms (Views: 68.7ms | ActiveRecord: 0.2ms)

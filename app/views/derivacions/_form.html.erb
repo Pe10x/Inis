@@ -1,0 +1,21 @@
+<%= form_for(@derivacion) do |f| %>
+  <% if @derivacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@derivacion.errors.count, "error") %> prohibited this derivacion from being saved:</h2>
+
+      <ul>
+      <% @derivacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :observacion %><br>
+    <%= f.text_field :observacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

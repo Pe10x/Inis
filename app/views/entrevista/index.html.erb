@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Entrevista</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asistencia</th>
+      <th>Tipo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entrevista.each do |entrevistum| %>
+      <tr>
+        <td><%= entrevistum.asistencia %></td>
+        <td><%= entrevistum.tipo %></td>
+        <td><%= link_to 'Show', entrevistum %></td>
+        <td><%= link_to 'Edit', edit_entrevistum_path(entrevistum) %></td>
+        <td><%= link_to 'Destroy', entrevistum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrevistum', new_entrevistum_path %>
