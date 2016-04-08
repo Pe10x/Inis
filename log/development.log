@@ -999,3 +999,631 @@ Processing by MotivosController#show as HTML
   [1m[35mMotivo Load (0.5ms)[0m  SELECT  "motivos".* FROM "motivos" WHERE "motivos"."id" = ? LIMIT 1  [["id", 21]]
   Rendered motivos/show.html.erb within layouts/application (114.9ms)
 Completed 200 OK in 558ms (Views: 487.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entrevista" for 127.0.0.1 at 2016-04-08 07:50:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntrevistaController#index as HTML
+  [1m[35mEntrevistum Load (0.3ms)[0m  SELECT "entrevista".* FROM "entrevista"
+  Rendered entrevista/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 799ms (Views: 769.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.self-321f43c2714c4801b5f68e5bc1cbb9d1e3df3dcdfd139b968875dcb05022153d.css?body=1" for 127.0.0.1 at 2016-04-08 07:50:09 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 07:50:09 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 07:50:09 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 07:50:30 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.2ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 133ms (Views: 129.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:11:15 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.3ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 9716ms (Views: 9691.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:11:26 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.3ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 116ms (Views: 114.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:12:43 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:14:27 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (2.7ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 143ms (Views: 136.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:14:28 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.3ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 123ms (Views: 122.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:07 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.4ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 181ms (Views: 179.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:26 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:15:27 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.3ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 171ms (Views: 170.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:16:35 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:17:21 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (2.3ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 145ms (Views: 142.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:17:22 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+Processing by MotivosController#index as HTML
+  [1m[36mMotivo Load (0.4ms)[0m  [1mSELECT "motivos".* FROM "motivos"[0m
+  Rendered motivos/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 125ms (Views: 123.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:04 -0300
+
+
+Started GET "/motivos" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+Processing by MotivosController#index as HTML
+  [1m[35mMotivo Load (0.3ms)[0m  SELECT "motivos".* FROM "motivos"
+  Rendered motivos/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 133ms (Views: 132.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/aulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/departamentos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/derivacions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/entrevista.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/motivos.self-9c71e290b1bc35e4f10af2816a23853337b74d49c6dd3a8fe0b562d055610f2e.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/horarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/scaffolds.self-829bc99e556b1ee6bc33e135e5acf54ce8e9b96ade5191d7da35f5d24373f843.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/usuarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/aulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/derivacions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/departamentos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:30 -0300
+
+
+Started GET "/assets/entrevista.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:31 -0300
+
+
+Started GET "/assets/horarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:31 -0300
+
+
+Started GET "/assets/motivos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:31 -0300
+
+
+Started GET "/assets/usuarios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:31 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-08 08:18:31 -0300
