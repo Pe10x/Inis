@@ -17,7 +17,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Tipo</th>
+        <th><h2> Tipo </h2></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -27,7 +27,7 @@
         <td><%= motivo.tipo %></td>
         
         <td><%= link_to 'Modificar', edit_motivo_path(motivo),class:'btn btn-success' %></td>
-        <td><%= link_to 'Destroy', motivo,class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', motivo,class:'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
